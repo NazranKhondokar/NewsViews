@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">News Views</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_internet"> Internet Connection is not Available </string>
+    <string name="retry"> Retry </string>
+
+    <!--  App Intro Slides Strings -->
+    <string name="slide_1_title"> Home Page </string>
+    <string name="slide_2_title"> App Page </string>
+    <string name="slide_3_title"> Info Page </string>
 </resources>
