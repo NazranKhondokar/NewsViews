@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 myTask = new MyTask();
                 myTask.execute();
             }
-        }, 500);
+        }, 1000);
     }
 
     private class MyTask extends AsyncTask<String, Void, String> {

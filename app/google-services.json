@@ -1,0 +1,144 @@
+{
+  "project_info": {
+    "project_number": "961876532196",
+    "firebase_url": "https://myfirebase-5d3c2.firebaseio.com",
+    "project_id": "myfirebase-5d3c2",
+    "storage_bucket": "myfirebase-5d3c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961876532196:android:88a178b11b4ae790",
+        "android_client_info": {
+          "package_name": "com.nazran.newsviews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961876532196-rptq0k8svn2a32v860d4di4cqld1ur8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqoSlI9-PwN-OcKfTvLA6we6mq5we5zBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961876532196-rptq0k8svn2a32v860d4di4cqld1ur8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961876532196:android:a4c204bc58eab13a",
+        "android_client_info": {
+          "package_name": "com.qtech.nazran.myfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961876532196-7pua1gqg0rdju1rsp3c52uqqel6q73g4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qtech.nazran.myfirebase",
+            "certificate_hash": "1a4046911f5cdddb0cb0725e6639fdee942c0e09"
+          }
+        },
+        {
+          "client_id": "961876532196-rptq0k8svn2a32v860d4di4cqld1ur8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqoSlI9-PwN-OcKfTvLA6we6mq5we5zBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961876532196-rptq0k8svn2a32v860d4di4cqld1ur8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961876532196:android:ced0ef099a9314b9",
+        "android_client_info": {
+          "package_name": "com.qtech05.nazran.kam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961876532196-rptq0k8svn2a32v860d4di4cqld1ur8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqoSlI9-PwN-OcKfTvLA6we6mq5we5zBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961876532196-rptq0k8svn2a32v860d4di4cqld1ur8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961876532196:android:4c269a3244023a7c",
+        "android_client_info": {
+          "package_name": "com.qtech05.nazran.npe2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961876532196-87biovqedjq24il2kfdrfmaokdjqt16e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qtech05.nazran.npe2018",
+            "certificate_hash": "00b219f718d865b9cbb8fd8127df1d5f31612823"
+          }
+        },
+        {
+          "client_id": "961876532196-rptq0k8svn2a32v860d4di4cqld1ur8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqoSlI9-PwN-OcKfTvLA6we6mq5we5zBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961876532196-rptq0k8svn2a32v860d4di4cqld1ur8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9512170496834781~7709094785"
+    }
+  ],
+  "configuration_version": "1"
+}
