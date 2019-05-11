@@ -98,7 +98,7 @@ public class HomeActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.container, new DrawerAbout()).commit();
             getSupportActionBar().setTitle("About");
         } else if (id == R.id.nav_exit) {
-
+            finish();
         } else if (id == R.id.nav_login) {
             /*FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.container, new DrawerLogin()).commit();
