@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.SearchActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".activities.WebViewActivity"
             android:screenOrientation="portrait"

@@ -5,12 +5,16 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.nazran.newsviews.R;
@@ -39,6 +43,10 @@ public class DrawerHome extends Fragment {
 
     @BindView(R.id.customRecyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.swipeRefresh)
+    SwipeRefreshLayout swipeRefresh;
+    @BindView(R.id.listGrid)
+    Button listGrid;
     ProgressDialog progressDialog;
     private CustomAdapter adapter;
     private List<Article> articleList = new ArrayList<>();
@@ -67,6 +75,30 @@ public class DrawerHome extends Fragment {
 
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading....");
+        loadData();
+
+        swipeRefresh.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        loadData();
+                    }
+                }
+        );
+        listGrid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isSwitched = adapter.toggleItemViewType();
+                //recyclerView.setLayoutManager(isSwitched ? new LinearLayoutManager(getActivity()) : new GridLayoutManager(getActivity(), 2));
+                recyclerView.setLayoutManager(isSwitched ? new LinearLayoutManager(getActivity()) : new StaggeredGridLayoutManager(2,
+                        StaggeredGridLayoutManager.VERTICAL));
+                adapter.notifyDataSetChanged();
+            }
+        });
+        return view;
+    }
+
+    private void loadData() {
         progressDialog.show();
 
         /*Create handle for the RetrofitInstance interface*/
@@ -78,6 +110,7 @@ public class DrawerHome extends Fragment {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
                 progressDialog.dismiss();
+                swipeRefresh.setRefreshing(false);
                 Log.e("Home", response.body().getStatus());
                 if (response.body().getStatus().equals("ok")) {
                     generateDataList(response.body().getArticles());
@@ -89,12 +122,11 @@ public class DrawerHome extends Fragment {
             @Override
             public void onFailure(Call<News> call, Throwable t) {
                 progressDialog.dismiss();
+                swipeRefresh.setRefreshing(false);
                 Toast.makeText(getActivity(), "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
                 Log.e("Home", "" + t.getMessage());
             }
         });
-
-        return view;
     }
 
     /*Method to generate List of data using RecyclerView with custom adapter*/
@@ -112,6 +144,9 @@ public class DrawerHome extends Fragment {
                 newsPopUp.show(getActivity().getSupportFragmentManager(), "PopUp");
             }
         });
+        boolean isSwitched = adapter.toggleItemViewType();
+        recyclerView.setLayoutManager(isSwitched ? new LinearLayoutManager(getActivity()) : new StaggeredGridLayoutManager(2,
+                StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(adapter);
     }
 }

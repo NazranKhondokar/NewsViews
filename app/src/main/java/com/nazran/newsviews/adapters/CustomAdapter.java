@@ -21,6 +21,9 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
+    private static final int LIST_ITEM = 0;
+    private static final int GRID_ITEM = 1;
+    boolean isSwitchView = true;
     private List<Article> dataList;
     private Context context;
     CustomItemClickListener customItemClickListener;
@@ -51,8 +54,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.custom_row, parent, false);
+        //LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        //View view = layoutInflater.inflate(R.layout.custom_row, parent, false);
+        View view;
+        if (viewType == LIST_ITEM){
+            view = LayoutInflater.from(parent.getContext()).inflate( R.layout.custom_row, null);
+        }else{
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_row_grid, null);
+        }
         final CustomViewHolder mViewHolder = new CustomViewHolder(view);
 
         view.setOnClickListener(new View.OnClickListener() {
@@ -80,5 +89,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     @Override
     public int getItemCount() {
         return dataList.size();
+    }
+
+    @Override
+    public int getItemViewType (int position) {
+        if (isSwitchView){
+            return LIST_ITEM;
+        }else{
+            return GRID_ITEM;
+        }
+    }
+
+    public boolean toggleItemViewType () {
+        isSwitchView = !isSwitchView;
+        return isSwitchView;
     }
 }
