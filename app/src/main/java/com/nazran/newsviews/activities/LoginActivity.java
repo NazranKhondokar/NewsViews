@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -44,6 +45,9 @@ public class LoginActivity extends BaseActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Google Log In");
         // Views
         mStatusTextView = findViewById(R.id.status);
         mDetailTextView = findViewById(R.id.detail);
@@ -193,6 +197,18 @@ public class LoginActivity extends BaseActivity implements
             signOut();
         } else if (i == R.id.disconnectButton) {
             revokeAccess();
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

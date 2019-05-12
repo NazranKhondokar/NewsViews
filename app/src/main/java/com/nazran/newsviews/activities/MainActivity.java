@@ -14,10 +14,14 @@ import com.nazran.newsviews.R;
 import com.nazran.newsviews.app.MyAppPrefsManager;
 import com.nazran.newsviews.utils.Utilities;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
     MyTask myTask;
     MyAppPrefsManager myAppPrefsManager;
+    @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
     @Override
@@ -26,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        ButterKnife.bind(this);
         myAppPrefsManager = new MyAppPrefsManager(this);
 
         new Handler().postDelayed(new Runnable() {
